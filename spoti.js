@@ -13,8 +13,8 @@ var artistRequest = function(id){
     $(".author").html(artists[0].name);
     $(".btn-info").html(artists[0].name);
     var info= "<p> name: "+artists[0].name+"</p><p>"+"<img src='"+artists[0].images[0].url+"'</img>";//</p><p>Genres, followers and popularity
-    $(".modal-body #name").html(artists[0].name);
-    $(".modal-body img").attr("src",artists[0].images[0].url);
+    $("#myModal .modal-body #name").html(artists[0].name);
+    $("#myModal .modal-body img").attr("src",artists[0].images[0].url);
     result="Genres:";
     console.log(artists[0].genres)
     for(var i=0, len=artists[0].genres.length;i<len;i++){
@@ -22,9 +22,9 @@ var artistRequest = function(id){
         result=result+"<li>" +artists[0].genres[i]+"</li>";
     }
     console.log(result);
-    $(".modal-body #genres").html(result);
+    $("#myModal .modal-body #genres").html(result);
     console.log(artists[0].followers.total);
-    $(".modal-body #followers").html("Followers: "+artists[0].followers.total);
+    $("#myModal .modal-body #followers").html("Followers: "+artists[0].followers.total);
 });
 
 }
@@ -69,6 +69,13 @@ var tracksRequest = function(id){
     $("#tittle").html(tracks[0].name);
     $("audio").attr("src",result);
     $("audio").attr("class","js-player");
+    var list="";
+    for(var i=0,len=tracks.length;i<len;i++){
+        list= list + "<li>" + tracks[i].name + "</li>";
+        console.log(tracks[i].name);
+    }
+    $("#myListModal .modal-body #tracks").html(list);
+
     //var audioDiv = document.createElement("div"); //Create left div
       //  audioDiv.id = "audio"; //Assign div id
         
