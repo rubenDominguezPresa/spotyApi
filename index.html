@@ -1,0 +1,67 @@
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<script src="./spoti.js" type="text/javascript"></script>
+</head>
+<body>
+	<div class="widget">
+		<div class="header">
+		<!-- Try adding/removing these classes: -->
+		<!-- disabled -->
+		<!-- playing -->
+		<div class="btn-play disabled"></div>
+
+		<div class="metadata">
+		  <p class="title">Hunger of The Pine</p>
+		  <p class="author">alt-J</p>
+
+		  <div class="seekbar">
+		    <progress value="0" max="30"></progress>
+		  </div>
+		</div>
+		</div>
+		<div class="cover">
+		<img src="https://i.scdn.co/image/04da6dfc1f5f45fdeba938a0cc71cf372524fd43">
+		</div>
+		<div>
+    	<input id="search" type="text" placeholder="Type here">
+    	<input id="submit" type="submit" value="Search" onclick="artistRequest(search.value)">
+		</div>
+
+		<audio src="https://p.scdn.co/mp3-preview/8e9c5ffdc38e91659bfe8b6bd44650dfc25a3d31"></audio>
+	
+		<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Alt-J</button>
+
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+        <h4 class="modal-title">Modal Header</h4>
+      </div>
+      <div class="modal-body">
+        <p id="name"></p>
+        <img class="cover" src="prueba">
+        <div id="genres"></div>
+        <p id="followers"></p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+	</div>
+<!-- Trigger the modal with a button -->
+</body>
+</html>
